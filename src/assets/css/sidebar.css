@@ -1,0 +1,23 @@
+/* Tags CSS */
+.blog-tags ul li {
+  list-style-type: none;
+  float: left;
+  margin: 5px;
+  background-color: rgb(212, 216, 212);
+  border-radius: 10px;
+  padding: 5px;
+  transition: 0.3s;
+}
+.blog-tags ul {
+  margin-left: -35px;
+}
+.blog-tags ul li:hover {
+  cursor: pointer;
+  background-color: black;
+  color: #fff;
+}
+.blog-categories ul li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  width: 100px;
+}

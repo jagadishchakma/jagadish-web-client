@@ -1,0 +1,46 @@
+.contact-me {
+  color: white;
+}
+.contact-me .medium {
+  background-color: rgb(60, 73, 80);
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 5px;
+}
+.contact-me .medium h6 {
+  background: #fff;
+  margin: 10px 0px;
+  padding: 10px;
+  border-radius: 5px;
+  color: black;
+}
+.contact-me .form-floating {
+  background-color: rgb(67, 82, 65);
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 5px;
+}
+.contacts .social-media {
+  margin-top: 100px;
+}
+.contacts .social-media ul {
+  margin-left: -35px;
+}
+.contacts .social-media ul li {
+  list-style-type: none;
+  float: left;
+  font-size: 50px;
+  padding-right: 10px;
+}
+.contact-me .send-message h4 {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .contact-me .send-message {
+    margin-top: 100px;
+  }
+  .contact-me .send-message h4 {
+    display: block;
+  }
+}

@@ -1,0 +1,58 @@
+.project-all-details {
+  background-color: rgb(143, 194, 146);
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.project-all-details > div {
+  width: 100%;
+}
+
+.project-use-lang {
+  margin-left: -35px;
+}
+.project-use-lang li {
+  list-style-type: none;
+  display: inline-block;
+  margin-right: 5px;
+  background-color: rgb(123, 156, 161);
+  border-radius: 2px;
+  padding: 5px 10px;
+  margin-top: 5px;
+}
+.project-link {
+  margin-left: -35px;
+}
+.project-link li {
+  list-style-type: none;
+  display: inline-block;
+  margin-right: 5px;
+  border-radius: 2px;
+  padding: 5px 10px;
+}
+.project-link li a {
+  color: rgb(30, 7, 51);
+}
+
+.project-title {
+  font-weight: bold;
+  color: rgb(7, 53, 7);
+  font-size: 25px;
+}
+.project-feature li {
+  margin-left: -20px;
+  font-size: 14px;
+}
+.projects-all-list {
+  transition: 0.3s ease-in-out;
+  margin-top: 100px;
+  background-color: rgb(235, 235, 235);
+  padding: 5px;
+}
+.projects-all-list:hover {
+  transform: scale(1.2, 1.2);
+}
+
+.project-spacial {
+  transform: scale(1.1, 1.1);
+}
