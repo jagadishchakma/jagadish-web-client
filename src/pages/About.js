@@ -1,10 +1,14 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import Fade from 'react-reveal/Fade';
+import ProfileInfo from '../components/About/ProfileInfo';
+import ProfileSummery from '../components/About/ProfileSummery';
 import BreadCrumb from '../components/Common/BreadCrumb';
 import Layout from '../components/Common/Layout';
 
+
 const About = () => {
+    document.title = 'About Jagadish Chakma | MEARN Stack Web Developer';
     return (
         <Layout>
             <BreadCrumb path="About"/>
@@ -18,16 +22,14 @@ const About = () => {
                         </div>
                         <div className="about">
                             <Row>
-                                <Col lg={4} md={4} sm={4} xs={12}>
+                                <Col lg={6} md={6} sm={6} xs={12}>
                                     <div className="profile">
-                                        <img src="https://jagadishchakma.github.io/creativity-web-developer-jagadish/images/jagadish2.png" alt="" width="100%" height=""/>
+                                        <img src="https://jagadishchakma.github.io/creativity-web-developer-jagadish/images/jagadish2.png" alt="" width="400"/>
                                     </div>
+                                    <ProfileInfo/>
                                 </Col>
-                                <Col lg={8} md={8} sm={8} xs={12}>
-                                    <div className="profile-info">
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem, deleniti minus? A, veritatis. Veritatis distinctio sapiente reprehenderit, ipsum a excepturi ipsa iure, quod quibusdam eos minima nemo, cupiditate consequuntur obcaecati.</p>
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem, deleniti minus? A, veritatis. Veritatis distinctio sapiente reprehenderit, ipsum a excepturi ipsa iure, quod quibusdam eos minima nemo, cupiditate consequuntur obcaecati.</p>
-                                    </div>
+                                <Col lg={6} md={6} sm={6} xs={12}>
+                                    <ProfileSummery/>
                                 </Col>
                             </Row>
                         </div>

@@ -1,0 +1,13 @@
+.comment-content {
+  margin-top: 100px;
+  padding: 20px;
+}
+
+.comment-profile {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.comment-profile > div {
+  margin-right: 20px;
+}

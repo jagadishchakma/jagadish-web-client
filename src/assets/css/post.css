@@ -1,0 +1,27 @@
+.posts-tag a {
+  margin-right: 5px;
+  font-size: 11px;
+  background-color: rgb(219, 219, 217);
+  border-radius: 2px;
+  padding: 5px 15px;
+}
+.comment {
+  margin-top: 100px;
+}
+.comment-box {
+  margin-top: 50px;
+}
+.comment .user {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.comment .user img {
+  width: 50px;
+}
+.comment .user .profile-title {
+  padding-left: 30px;
+}
+.comment .comment-field {
+  height: 200px;
+}

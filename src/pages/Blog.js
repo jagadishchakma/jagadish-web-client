@@ -5,11 +5,13 @@ import Blogs from '../components/Blog/Blogs';
 import BlogSidebar from '../components/Blog/BlogSidebar';
 import BreadCrumb from '../components/Common/BreadCrumb';
 import Layout from '../components/Common/Layout';
-import Spinner from '../Spinner/Spinner';
+import BlogSkeleton from '../Skeleton/BlogSkeleton';
+
 
 const Blog = () => {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(false);
+    document.title = 'Blog | Jagadish Chakma | MEARN Stack Web Developer';
     useEffect(() => {
         setLoading(true);
         fetch('https://intense-shelf-11310.herokuapp.com/post', {
@@ -36,7 +38,7 @@ const Blog = () => {
                                 <Col lg={8} md={8} sm={12} xs={12}>
                                     <Row>
                                         {
-                                            loading ? <Spinner/> :  posts.map(post => <Blogs post={post}/>) 
+                                            loading ? <BlogSkeleton/> :  posts.map(post => <Blogs post={post}/>) 
                                         }
                                     </Row>
                                 </Col>

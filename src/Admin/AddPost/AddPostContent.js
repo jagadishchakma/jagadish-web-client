@@ -7,7 +7,10 @@ import Spinner from '../../Spinner/Spinner';
 const AddCategoryContent = (props) => {
     const [loading, setLoading] = useState(false);
     const [categories, setCategories] = useState([]);
-    const [post, setPost] = useState({});
+    const [tags, setTags] = useState([]);
+    const [post, setPost] = useState({
+        tags: [],
+    });
     const [success, setSuccess] = useState(false);
     const [submit, setSubmit] = useState(false);
     const {toggle} = props;
@@ -24,12 +27,36 @@ const AddCategoryContent = (props) => {
             setLoading(false);
         })
     }, [])
+    // get tag list
+    useEffect(() => {
+        fetch('https://intense-shelf-11310.herokuapp.com/tag', {
+            method: 'GET'
+        })
+        .then(res => res.json())
+        .then(data => {
+            setTags(data);
+        })
+    }, [])
 
     // data retrieve form
     const handleInputChange = (e) => {
         const newPost = {...post};
         newPost[e.target.name] = e.target.value;
         setPost(newPost);
+    }
+    // checkbox data retrive
+    const handleCheckBox = (e) => {
+        if(e.target.checked){
+            const newPost = {...post};
+            newPost['tags'] = [...newPost.tags, e.target.value];
+            setPost(newPost);
+        }else{
+            const newPost = {...post};
+            const tags = newPost.tags;
+            const newTags = tags.filter(tag => tag !== e.target.value);
+            newPost['tags'] = newTags;
+            setPost(newPost);
+        }
     }
    
     // data form submit
@@ -60,6 +87,8 @@ const AddCategoryContent = (props) => {
         marginLeft: '200px',
         marginTop: '70px',
     };
+
+    console.log(post);
     return (
         <>
         {
@@ -95,6 +124,11 @@ const AddCategoryContent = (props) => {
                     </div>
                     <div className="form-group">
                         <input type="text" name="date" className="form-control" onChange={handleInputChange} placeholder="23, march 2021"/>
+                    </div>
+                    <div className="form-group">
+                        {
+                            tags.map(tag => <><input type="checkbox" onChange={handleCheckBox} name={tag.tag} value={tag.tag}/> <span> {tag.tag}</span></> )
+                        }
                     </div>
             
                     {submit && <p className="alert alert-success">Success Post Insert</p> }

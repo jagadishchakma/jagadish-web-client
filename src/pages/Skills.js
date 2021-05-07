@@ -6,6 +6,7 @@ import Layout from '../components/Common/Layout';
 import SkillsProgress from '../components/Skills/SkillsProgress';
 
 const Skills = () => {
+    document.title = 'Skills | Jagadish Chakma | MEARN Stack Web Developer';
     return (
         <Layout>
             <BreadCrumb path="Skills"/>

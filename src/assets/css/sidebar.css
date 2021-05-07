@@ -16,8 +16,10 @@
   background-color: black;
   color: #fff;
 }
-.blog-categories ul li:hover {
-  text-decoration: underline;
-  cursor: pointer;
-  width: 100px;
+
+@media only screen and (max-width: 771px) {
+  .blog-sidebar {
+    border-top: 1px solid rgb(219, 219, 219);
+    padding-top: 100px;
+  }
 }

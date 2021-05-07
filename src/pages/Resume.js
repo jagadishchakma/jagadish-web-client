@@ -5,6 +5,7 @@ import BreadCrumb from '../components/Common/BreadCrumb';
 import Layout from '../components/Common/Layout';
 
 const Resume = () => {
+    document.title = 'Resume | Jagadish Chakma | MEARN Stack Web Developer';
     return (
         <Layout>
             <BreadCrumb path="Resume"></BreadCrumb>

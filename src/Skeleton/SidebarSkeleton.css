@@ -1,0 +1,45 @@
+.skeleform {
+  display: flex;
+}
+.skeleform .skeleform-one {
+  width: 70%;
+  height: 80px;
+  background-color: rgb(235, 233, 233);
+}
+.skeleform .skeleform-two {
+  width: 20%;
+  height: 80px;
+  background-color: rgb(235, 233, 233);
+  margin-left: 20px;
+}
+.skelecatgory {
+  margin-top: 50px;
+}
+.skeletag {
+  margin-top: 50px;
+}
+
+.skelecategory-one,
+.skeletag-one {
+  height: 15px;
+  background-color: rgb(235, 233, 233);
+  width: 60%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.skelecategory-two {
+  height: 5px;
+  background-color: rgb(235, 233, 233);
+  width: 90%;
+  margin-top: 5px;
+  margin-left: 15px;
+}
+
+.skeletag-two {
+  float: left;
+  height: 10px;
+  background-color: rgb(235, 233, 233);
+  width: 80px;
+  margin-top: 5px;
+  margin-left: 15px;
+}

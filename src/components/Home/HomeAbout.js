@@ -10,7 +10,7 @@ const HomeAbout = () => {
     return (
         <Fade bottom>
             <section className="content home-about">
-                <Container fluid={true}>
+                <Container>
                     <h2 className="section-title text-center">About Me <sup className="badge badge-danger">More</sup></h2>
                     <Row>
                         <Col lg={4} md={4} sm={4} xs={12}>

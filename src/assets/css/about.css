@@ -1,0 +1,31 @@
+.summery {
+  overflow: hidden;
+  margin-bottom: 100px;
+}
+.summery-title {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+  text-align: center;
+}
+.summery-title .p-line {
+  width: 40%;
+  height: 1px;
+  background-color: black;
+}
+.summery-title .p-title {
+  width: 20%;
+}
+.about-key-skills {
+  margin-left: -35px;
+}
+.about-key-skills li {
+  list-style-type: none;
+  margin-right: 5px;
+  margin-top: 5px;
+  background-color: cadetblue;
+  padding: 5px 10px;
+  border-radius: 3px;
+  float: left;
+}

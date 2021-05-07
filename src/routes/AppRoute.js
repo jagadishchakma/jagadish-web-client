@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import About from '../pages/About';
 import Blog from '../pages/Blog';
+import Category from '../pages/Category';
 import Contact from '../pages/Contact';
 import Home from '../pages/Home';
 import Post from '../pages/Post';
@@ -39,6 +40,9 @@ const AppRoute = () => {
             </Route>
             <Route exact path="/blog/post/:id">
                 <Post/>
+            </Route>
+            <Route exact path="/blog/:category">
+                <Category/>
             </Route>
         </Switch>
     );

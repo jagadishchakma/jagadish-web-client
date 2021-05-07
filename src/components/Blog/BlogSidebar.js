@@ -1,8 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import SidebarSkeleton from '../../Skeleton/SidebarSkeleton';
+
 
 const BlogSidebar = () => {
+    const [categories, setCategories] = useState([]);
+    const [tags, setTags] = useState([]);
+    const [loading, setLoading] = useState(false);
+    // Get Categories
+    useEffect(() => {
+        fetch('https://intense-shelf-11310.herokuapp.com/category', {
+            method: "GET",
+        })
+        .then(res => res.json())
+        .then(data => setCategories(data))
+    });
+
+    // Get Tags
+    useEffect(() => {
+        setLoading(true);
+        fetch('https://intense-shelf-11310.herokuapp.com/tag', {
+            method: "GET",
+        })
+        .then(res => res.json())
+        .then(data => {
+            setTags(data);
+            setLoading(false);
+        })
+    }, []);
     return (
+        loading ? <SidebarSkeleton/> : 
         <aside className="blog-sidebar">
             <div className="blog-search">
                 <form>
@@ -23,39 +51,17 @@ const BlogSidebar = () => {
             <div className="blog-categories">
                 <h4>Categories: </h4>
                 <ul>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                    <li>NodeJS</li>
-                    <li>MongoDB</li>
-                    <li>ReactJS</li>
-                    <li>Laravel</li>
+                    {
+                        categories.map(category => <li><Link to={`/blog/${category.category}`}>{category.category}</Link></li> )
+                    }
                 </ul>
             </div>
             <div className="blog-tags">
                 <h4>Tags:</h4>
                 <ul>
-                    <li>Sidebar</li>
-                    <li>Context API</li>
-                    <li>Laravel</li>
-                    <li>DevShop</li>
-                    <li>MongoDB</li>
-                    <li>ReactJS</li>
-                    <li>Laravel</li>
-                    <li>Sidebar</li>
-                    <li>Context API</li>
-                    <li>Laravel</li>
-                    <li>DevShop</li>
-                    <li>MongoDB</li>
-                    <li>ReactJS</li>
-                    <li>Laravel</li>
-                    <li>Sidebar</li>
-                    <li>Context API</li>
-                    <li>Laravel</li>
-                    <li>DevShop</li>
-                    <li>MongoDB</li>
-                    <li>ReactJS</li>
-                    <li>Laravel</li>
+                    {
+                        tags.map(tag => <li><Link to={`/blog/${tag.tag}`}>{tag.tag}</Link></li> )
+                    }
                 </ul>
             </div>
         </aside>

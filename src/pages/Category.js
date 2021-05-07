@@ -2,21 +2,20 @@ import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import Fade from 'react-reveal/Fade';
 import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
+import Blogs from '../components/Blog/Blogs';
 import BlogSidebar from '../components/Blog/BlogSidebar';
-import Comment from '../components/Blog/Comment';
 import BreadCrumb from '../components/Common/BreadCrumb';
 import Layout from '../components/Common/Layout';
 import Spinner from '../Spinner/Spinner';
 
-
-const Post = () => {
-    const [posts, setPosts] = useState({});
+const Category = () => {
+    const [posts, setPosts] = useState([]);
+   
     const [loading, setLoading] = useState(false);
-    const {id} = useParams();
+    const {category} = useParams();
     useEffect(() => {
         setLoading(true);
-        fetch('https://intense-shelf-11310.herokuapp.com/post/'+id, {
+        fetch('https://intense-shelf-11310.herokuapp.com/post/category/'+category, {
             method: "GET",
             headers: {
                 'Content-Type':'application/json'
@@ -26,11 +25,11 @@ const Post = () => {
         .then(data => {
             
             setLoading(false);
-            setPosts(data[0]);
+            setPosts(data);
             
         })
-    }, [id]);
-    document.title = posts.title || 'Loading....';
+    }, [category]);
+    document.title = category + 'Posts By Jagadish Chakma';
     return (
         <Layout>
             <BreadCrumb path="Blogs"/>
@@ -41,20 +40,11 @@ const Post = () => {
                         <div className="blogs">
                             <Row>
                                 <Col lg={8} md={8} sm={12} xs={12}>
+                                    <Row>
                                     {
-                                        loading ? <Spinner/> : <div>
-                                        <img src={posts.thumbnail} alt={posts.title} width="98%"/>
-                                            <h1>{posts.title}</h1>
-                                                <div dangerouslySetInnerHTML={{__html: posts.description}}>
-                                                
-                                            </div>
-                                            <div className="posts-tag">
-                                                {posts.tags && posts.tags.map(tag => <Link>{tag}</Link> ) }
-                                            </div>
-                                            <Comment id={id}/>
-                                            
-                                        </div>
+                                        loading ? <Spinner/> : posts.length > 0 ?  posts.map(post => <Blogs post={post}/>) :  <h1 className="text-center text-danger p-5">OOPS Sory! Not Have Post Yet!</h1>
                                     }
+                                    </Row>
                                 </Col>
                                 <Col lg={4} md={4} sm={12} xs={12}>
                                     <BlogSidebar/>
@@ -68,4 +58,4 @@ const Post = () => {
     );
 };
 
-export default Post;
+export default Category;

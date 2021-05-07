@@ -8,6 +8,7 @@ import BreadCrumb from '../components/Common/BreadCrumb';
 import Layout from '../components/Common/Layout';
 
 const Services = () => {
+    document.title = 'Services | Jagadish Chakma | MEARN Stack Web Developer';
     return (
         <Layout>
             <BreadCrumb path="Services"/>

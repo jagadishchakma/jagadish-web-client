@@ -1,4 +1,5 @@
 import React from 'react';
+import Zoom from 'react-reveal/Zoom';
 import Footer from '../components/Common/Footer';
 import NavMenu from '../components/Common/NavMenu';
 import HomeAbout from '../components/Home/HomeAbout';
@@ -7,9 +8,9 @@ import HomeProject from '../components/Home/HomeProject';
 import HomeService from '../components/Home/HomeService';
 import HomeSkill from '../components/Home/HomeSkill';
 import HomeSlider from '../components/Home/HomeSlider';
-import Zoom from 'react-reveal/Zoom';
 
 const Home = () => {
+    document.title = 'Jagadish Chakma | MEARN Stack Web Developer';
     return (
         <div className="homeBg">
             

@@ -7,7 +7,7 @@ const HomeSkill = () => {
     
     return (
         <section className="content home-skill">
-            <Container fluid="true">
+            <Container>
                 <h2 className="section-title text-center">My Skills <sup className="badge badge-danger">More</sup> </h2>
                 <Slide bottom>   
                     <SkillsProgress/>

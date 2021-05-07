@@ -9,9 +9,11 @@ import BreadCrumb from '../components/Common/BreadCrumb';
 import Layout from '../components/Common/Layout';
 import Loading from '../Spinner/Loading';
 
+
 const Contact = () => {
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
+    document.title = 'Contact | Jagadish Chakma | MEARN Stack Web Developer';
     function sendEmail(e) {
         e.preventDefault();
         setLoading(true);
