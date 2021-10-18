@@ -34,7 +34,7 @@ const Comment = ({id}) => {
                 const {token} = JSON.parse(user);
                 const userCommentInfo = {...comment, id, token};
                 setLoading(true);
-                fetch('http://localhost:4000/comment', {
+                fetch('https://intense-shelf-11310.herokuapp.com/comment', {
                     method: 'POST',
                     headers: {
                         'Content-Type' : 'application/json'
@@ -57,7 +57,7 @@ const Comment = ({id}) => {
                     const user = result.user;
                     const {displayName, email, photoURL} = user;
                     setLoading(true);
-                    fetch('http://localhost:4000/user/signup', {
+                    fetch('https://intense-shelf-11310.herokuapp.com/user/signup', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'

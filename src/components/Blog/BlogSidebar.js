@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import SidebarSkeleton from '../../Skeleton/SidebarSkeleton';
 
 
@@ -8,6 +8,8 @@ const BlogSidebar = () => {
     const [categories, setCategories] = useState([]);
     const [tags, setTags] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [search, setSearch] = useState(null);
+    const history = useHistory();
     // Get Categories
     useEffect(() => {
         fetch('https://intense-shelf-11310.herokuapp.com/category', {
@@ -29,15 +31,28 @@ const BlogSidebar = () => {
             setLoading(false);
         })
     }, []);
+
+    const handleInputChange = (e) => {
+        e.preventDefault();
+        setSearch(e.target.value);
+        if(e.keyCode === 13){
+            history.push('/search?q='+search);
+        }
+    }
+
+    const handleSerach = (e) => {
+        e.preventDefault();
+        history.push('/search?q='+search);
+    }
     return (
         loading ? <SidebarSkeleton/> : 
         <aside className="blog-sidebar">
             <div className="blog-search">
-                <form>
+                <form onSubmit={handleSerach}>
                     <Row>
                         <Col lg={6} md={6} sm={6} xs={6}>
                             <div className="form-group">
-                                <input type="search" className="form-control" placheholder="Search here..."/>
+                                <input type="search" onKeyUp={handleInputChange} className="form-control" placheholder="Search here..."/>
                             </div>
                         </Col>
                         <Col lg={6} md={6} sm={6} xs={6}>

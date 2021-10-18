@@ -8,6 +8,7 @@ import Home from '../pages/Home';
 import Post from '../pages/Post';
 import Projects from '../pages/Projects';
 import Resume from '../pages/Resume';
+import Search from '../pages/Search';
 import Services from '../pages/Services';
 import Skills from '../pages/Skills';
 
@@ -43,6 +44,9 @@ const AppRoute = () => {
             </Route>
             <Route exact path="/blog/:category">
                 <Category/>
+            </Route>
+            <Route exact path="/search">
+                <Search/>
             </Route>
         </Switch>
     );

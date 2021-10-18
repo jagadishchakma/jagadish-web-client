@@ -4,7 +4,7 @@ const CommentContent = ({id, success}) => {
     const [comments, setComments] = useState([]);
     const [loading, setLoading] = useState(false);
     useEffect(() => {
-        fetch('http://localhost:4000/comment/'+id, {
+        fetch('https://intense-shelf-11310.herokuapp.com/comment/'+id, {
             method: 'GET'
         })
         .then(res => res.json())
